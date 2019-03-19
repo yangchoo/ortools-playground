@@ -29,4 +29,10 @@ card_rarity = {
 
 solution = hearth_solve(budget, cards_in_collection, card_rarity)
 
-print(json.dumps(solution, indent=2))
+# Parse out cards to craft/de-craft
+for card_name, card_counts in solution["cards"].items():
+    for i in ("std", "gold"):
+        print(f"{card_name}_{i}: Craft {card_counts[i]['craft']}, De-craft {card_counts[i]['decraft']}")
+
+print(solution["dust"])
+# print(json.dumps(solution, indent=2))

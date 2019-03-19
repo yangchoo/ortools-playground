@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47f898c1-a8f8-44f0-bc64-e1fb023f5a07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ortools-playground.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.python-version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sat_examples/hearthstone_hof_dust.py" beforeDir="false" afterPath="$PROJECT_DIR$/sat_examples/hearthstone_hof_dust.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,15 +14,15 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ortools_playground$hearthstone_hof_dust_optimizer.coverage" NAME="hearthstone-hof-dust-optimizer Coverage Results" MODIFIED="1552872021483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ortools_playground$solver_test.coverage" NAME="solver_test Coverage Results" MODIFIED="1552874042600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/ortools_playground$example.coverage" NAME="example Coverage Results" MODIFIED="1552875327734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ortools_playground$example.coverage" NAME="example Coverage Results" MODIFIED="1552974335612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sat_examples/hearthstone_hof_dust.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+            <state relative-caret-position="2940">
+              <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -43,20 +33,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="456">
+              <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
               <folding>
                 <element signature="e#24#35#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.local/share/virtualenvs/ortools-playground-l_klPkyD/lib/python3.7/site-packages/ortools/sat/python/cp_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="1290" column="20" selection-start-line="1290" selection-start-column="20" selection-end-line="1290" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -79,6 +60,7 @@
       <find>cards_in_col</find>
       <find>final</find>
       <find>objective</find>
+      <find>MAX_COPIES</find>
     </findStrings>
     <replaceStrings>
       <replace>CARDS</replace>
@@ -86,6 +68,7 @@
       <replace>gold</replace>
       <replace>objective</replace>
       <replace>final</replace>
+      <replace>max_copies</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -105,10 +88,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
-    <option name="y" value="-23" />
-    <option name="width" value="962" />
-    <option name="height" value="1081" />
+    <option name="x" value="-1" />
+    <option name="width" value="1922" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -245,23 +227,23 @@
       <updated>1552259116908</updated>
       <workItem from="1552259118307" duration="10576000" />
       <workItem from="1552499138955" duration="4000" />
-      <workItem from="1552857474232" duration="24854000" />
+      <workItem from="1552857474232" duration="28212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35434000" />
+    <option name="totallyTimeSpent" value="38792000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="-23" width="962" height="1081" extended-state="0" />
+    <frame x="-1" y="0" width="1922" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17177244" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.083778016" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295099" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32846716" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32834226" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -323,13 +305,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/ortools-playground-l_klPkyD/lib/python3.7/site-packages/ortools/sat/python/cp_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="1290" column="20" selection-start-line="1290" selection-start-column="20" selection-end-line="1290" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/solver_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -340,10 +315,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/ortools-playground-l_klPkyD/lib/python3.7/site-packages/ortools/sat/python/cp_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1135">
+          <caret line="1287" lean-forward="true" selection-start-line="530" selection-end-line="1330" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sat_examples/hearthstone_hof_dust.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        <state relative-caret-position="2940">
+          <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -352,8 +334,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="456">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
           <folding>
             <element signature="e#24#35#0" expanded="true" />
           </folding>

@@ -26,9 +26,10 @@ DECRAFT_COST = {
 
 # Normalize to max copies
 MAX_COPIES = 2
+MAX_LEGEND_COPIES = 1
 
 
-def solve(budget: int, cards_in_collection: Dict, card_rarity: Dict):
+def solve(budget: int, cards_in_collection: Dict, card_rarities: Dict):
     model = cp_model.CpModel()
 
     cards_present = {
@@ -43,32 +44,34 @@ def solve(budget: int, cards_in_collection: Dict, card_rarity: Dict):
     # Assumption 1: We do not mind de-crafting extra copies if it makes sense
     for name, present in cards_present.items():
         CARDS[name] = {}
+        card_rarity = card_rarities[name]
+        max_copies = MAX_LEGEND_COPIES if card_rarity == "legendary" else MAX_COPIES
 
         # Standard
         CARDS[name]["std"] = {}
         CARDS[name]["std"]["initial"] = present["standard"]
-        CARDS[name]["std"]["profit"] = DECRAFT_COST[card_rarity[name]]
-        CARDS[name]["std"]["cost"] = CRAFT_COST[card_rarity[name]]
+        CARDS[name]["std"]["profit"] = DECRAFT_COST[card_rarity]
+        CARDS[name]["std"]["cost"] = CRAFT_COST[card_rarity]
 
         # Golden
         gold_name = f"{name}_golden"
         CARDS[name]["gold"] = {}
         CARDS[name]["gold"]["initial"] = present["golden"]
-        CARDS[name]["gold"]["profit"] = DECRAFT_COST[f"{card_rarity[name]}_gold"]
-        CARDS[name]["gold"]["cost"] = CRAFT_COST[f"{card_rarity[name]}_gold"]
+        CARDS[name]["gold"]["profit"] = DECRAFT_COST[f"{card_rarity}_gold"]
+        CARDS[name]["gold"]["cost"] = CRAFT_COST[f"{card_rarity}_gold"]
 
         # Decisions - Craft
-        CARDS[name]["std"]["craft"] = model.NewIntVar(0, MAX_COPIES, f"{name}_craft")
+        CARDS[name]["std"]["craft"] = model.NewIntVar(0, max_copies, f"{name}_craft")
         CARDS[name]["gold"]["craft"] = model.NewIntVar(
-            0, MAX_COPIES, f"{gold_name}_craft"
+            0, max_copies, f"{gold_name}_craft"
         )
 
         # Decisions - Decraft
         CARDS[name]["std"]["decraft"] = model.NewIntVar(
-            0, MAX_COPIES, f"{name}_decraft"
+            0, max_copies, f"{name}_decraft"
         )
         CARDS[name]["gold"]["decraft"] = model.NewIntVar(
-            0, MAX_COPIES, f"{gold_name}_decraft"
+            0, max_copies, f"{gold_name}_decraft"
         )
 
         # You cannot decraft what you do not have
@@ -86,18 +89,27 @@ def solve(budget: int, cards_in_collection: Dict, card_rarity: Dict):
         )
         model.Add(CARDS[name]["gold"]["final"] >= 0)
 
-        # Bonus limited to only max of 2 golden or 2 standard
-        CARDS[name]["std"]["bonus"] = model.NewIntVar(0, MAX_COPIES, f"{name}_bonus")
+        # Extra Dust Bonus
+        CARDS[name]["std"]["bonus"] = model.NewIntVar(0, max_copies, f"{name}_bonus")
         CARDS[name]["gold"]["bonus"] = model.NewIntVar(
-            0, MAX_COPIES, f"{gold_name}_bonus"
+            0, max_copies, f"{gold_name}_bonus"
         )
         model.Add(CARDS[name]["gold"]["bonus"] == CARDS[name]["gold"]["final"])
-        model.AddAllowedAssignments(
-            [CARDS[name]["std"]["bonus"], CARDS[name]["gold"]["bonus"]],
-            [(0, 0), (1, 0), (2, 0), (0, 2), (1, 1), (0, 1)],
-        )
         model.Add(CARDS[name]["gold"]["bonus"] <= CARDS[name]["gold"]["final"])
         model.Add(CARDS[name]["std"]["bonus"] <= CARDS[name]["std"]["final"])
+
+        # Bonus limited to only max of 1 golden or standard for legendary
+        if card_rarity == "legendary":
+            model.AddAllowedAssignments(
+                [CARDS[name]["std"]["bonus"], CARDS[name]["gold"]["bonus"]],
+                [(0, 0), (1, 0), (0, 1)],
+            )
+        else:
+            # Bonus limited to only max of 2 golden or 2 standard for non-legendary
+            model.AddAllowedAssignments(
+                [CARDS[name]["std"]["bonus"], CARDS[name]["gold"]["bonus"]],
+                [(0, 0), (1, 0), (2, 0), (0, 2), (1, 1), (0, 1)],
+            )
 
     # Card Cost
     card_craft_cost = []
