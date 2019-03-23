@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47f898c1-a8f8-44f0-bc64-e1fb023f5a07" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/example.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sat_examples/hearthstone_hof_dust.py" beforeDir="false" afterPath="$PROJECT_DIR$/sat_examples/hearthstone_hof_dust.py" afterDir="false" />
-    </list>
+    <list default="true" id="47f898c1-a8f8-44f0-bc64-e1fb023f5a07" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,12 +224,12 @@
       <updated>1552259116908</updated>
       <workItem from="1552259118307" duration="10576000" />
       <workItem from="1552499138955" duration="4000" />
-      <workItem from="1552857474232" duration="28212000" />
+      <workItem from="1552857474232" duration="29087000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38792000" />
+    <option name="totallyTimeSpent" value="39667000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1057" extended-state="0" />

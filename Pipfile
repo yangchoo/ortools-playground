@@ -5,8 +5,6 @@ name = "pypi"
 
 [packages]
 ortools = ">=6.10"
-ortools-examples = {editable = true,path = "."}
-sat-examples = {editable = true,path = "."}
 
 [dev-packages]
 black = "==19.3b0"
