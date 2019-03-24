@@ -5,9 +5,10 @@ import json
 # Hearthstone HOF Dust
 from sat_examples.hearthstone_hof_dust import solve as hearth_solve
 
-budget = 3000
+budget = 10000
 cards_in_collection = {
-    "naturalize": {"standard": 2, "golden": 1},
+    "naturalize": {"standard": 2, "golden": 0},
+    "black cat": {"standard": 2, "golden": 1},
     "doomguard": {"standard": 1, "golden": 2},
     "divine favor": {"standard": 2, "golden": 0},
     "murkspark eel": {"standard": 2, "golden": 0},
@@ -18,6 +19,7 @@ cards_in_collection = {
 }
 card_rarity = {
     "naturalize": "common",
+    "black cat": "common",
     "doomguard": "rare",
     "divine favor": "rare",
     "murkspark eel": "rare",
